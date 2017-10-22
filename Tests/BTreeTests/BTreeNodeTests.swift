@@ -3,7 +3,7 @@
 //  BTree
 //
 //  Created by Károly Lőrentey on 2016-02-21.
-//  Copyright © 2015–2016 Károly Lőrentey.
+//  Copyright © 2015–2017 Károly Lőrentey.
 //
 
 import XCTest
@@ -440,7 +440,7 @@ class BTreeNodeTests: XCTestCase {
             let tree = BTree<Int, String>(order: 5)
             return tree.root
         }
-        func createNode<S: Sequence>(_ keys: S) -> Node where S.Iterator.Element == Int {
+        func createNode<S: Sequence>(_ keys: S) -> Node where S.Element == Int {
             let elements = keys.map { ($0, String($0)) }
             let tree = BTree(sortedElements: elements, order: 5)
             return tree.root

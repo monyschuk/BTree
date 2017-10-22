@@ -3,7 +3,7 @@
 //  BTree
 //
 //  Created by Károly Lőrentey on 2016-03-04.
-//  Copyright © 2016 Károly Lőrentey.
+//  Copyright © 2016–2017 Károly Lőrentey.
 //
 
 import XCTest
@@ -14,7 +14,7 @@ private typealias Node = BTreeNode<Int, Void>
 private typealias Tree = BTree<Int, Void>
 private typealias Element = (Int, Void)
 
-private func makeTree<S: Sequence>(_ s: S, order: Int = 5, keysPerNode: Int? = nil) -> Tree where S.Iterator.Element == Int {
+private func makeTree<S: Sequence>(_ s: S, order: Int = 5, keysPerNode: Int? = nil) -> Tree where S.Element == Int {
     var b = Builder(order: order, keysPerNode: keysPerNode ?? order - 1)
     for i in s {
         b.append((i, ()))

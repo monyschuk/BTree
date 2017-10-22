@@ -3,7 +3,7 @@
 //  BTree
 //
 //  Created by Károly Lőrentey on 2016-02-29.
-//  Copyright © 2016 Károly Lőrentey.
+//  Copyright © 2016–2017 Károly Lőrentey.
 //
 
 import XCTest
@@ -23,7 +23,7 @@ class BTreeMergeTests: XCTestCase {
         return Tree(order: 5)
     }
 
-    func makeTree<S: Sequence>(_ s: S, order: Int = 5, keysPerNode: Int? = nil) -> Tree where S.Iterator.Element == Int {
+    func makeTree<S: Sequence>(_ s: S, order: Int = 5, keysPerNode: Int? = nil) -> Tree where S.Element == Int {
         var b = Builder(order: order, keysPerNode: keysPerNode ?? order - 1)
         for i in s.sorted() {
             b.append((i, ()))

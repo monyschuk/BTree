@@ -3,7 +3,7 @@
 //  BTree
 //
 //  Created by Károly Lőrentey on 2016-02-26.
-//  Copyright © 2016 Károly Lőrentey.
+//  Copyright © 2016–2017 Károly Lőrentey.
 //
 
 import XCTest
@@ -436,7 +436,7 @@ class PathTests<Path: BTreePath> where Path.Key == Int, Path.Value == String {
                     XCTAssertTrue(n.children[s] === node)
                 }
                 XCTAssertEqual(slot, 0)
-                p.append(node, slot)
+                p.append((node, slot))
             }
             XCTAssertTrue(p.last!.0.isLeaf)
 
@@ -497,7 +497,7 @@ class PathTests<Path: BTreePath> where Path.Key == Int, Path.Value == String {
 
 class BTreePathTests: XCTestCase {
     /// Poor man's generic test runner
-    func runTests<Path: BTreePath>(_ tests: PathTests<Path>) where Path.Key == Int, Path.Value == String {
+    func runTests<Path>(_ tests: PathTests<Path>) {
         for (name, testCase) in tests.testCases {
             print("  \(name)")
             testCase()
