@@ -3,7 +3,7 @@
 //  BTree
 //
 //  Created by Károly Lőrentey on 2016-02-29.
-//  Copyright © 2016 Károly Lőrentey.
+//  Copyright © 2016–2017 Károly Lőrentey.
 //
 
 import XCTest
@@ -15,7 +15,7 @@ class BTreeBuilderTests: XCTestCase {
     typealias Tree = BTree<Int, String>
     typealias Element = (Int, String)
 
-    func elements<S: Sequence>(_ range: S) -> [Element] where S.Iterator.Element == Int {
+    func elements<S: Sequence>(_ range: S) -> [Element] where S.Element == Int {
         return range.map { ($0, String($0)) }
     }
 

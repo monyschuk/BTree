@@ -1,3 +1,11 @@
+# 4.1.0 (2017-09-07)
+
+This release updates the project to Swift 4 with no functional changes.
+
+BTree is now part of the Attaswift project. The bundle identifiers in the supplied Xcode project have been updated accordingly.
+
+Note that the URL for the package's Git repository has changed; please update your references.
+
 # 4.0.2 (2017-02-07)
 
 This release contains the following changes:
@@ -8,7 +16,7 @@ This release contains the following changes:
 - (Xcode project) The build number is now correctly set in the tvOS framework.
 - (Xcode project) Code signing has been disabled, following Xcode 8 best practices.
 
-[issue5]: https://github.com/lorentey/BTree/issues/5
+[issue5]: https://github.com/attaswift/BTree/issues/5
 
 # 4.0.1 (2016-11-08)
 
@@ -18,7 +26,7 @@ This is a quick bugfix release restoring support for the Swift Package Manager. 
 
 - [Issue #23][issue23]: BTree is not buildable with the Swift Package Manager
 
-[issue23]: https://github.com/lorentey/BTree/issues/21
+[issue23]: https://github.com/attaswift/BTree/issues/21
 
 # 4.0.0 (2016-11-07)
 
@@ -55,9 +63,9 @@ This is a major release incorporating API-breaking changes. It also includes fix
 - [Issue #21][issue21]: BTree comparisons (subset/superset) may assert on certain shared subtrees
 - `SortedSet.update(with:)` now has a discardable result.
 
-[issue19]: https://github.com/lorentey/BTree/issues/19
-[issue20]: https://github.com/lorentey/BTree/issues/20
-[issue21]: https://github.com/lorentey/BTree/issues/21
+[issue19]: https://github.com/attaswift/BTree/issues/19
+[issue20]: https://github.com/attaswift/BTree/issues/20
+[issue21]: https://github.com/attaswift/BTree/issues/21
 
 
 # 3.1.0 (2016-10-06)

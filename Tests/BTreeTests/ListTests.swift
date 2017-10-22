@@ -3,7 +3,7 @@
 //  BTree
 //
 //  Created by Károly Lőrentey on 2015-12-15.
-//  Copyright © 2015–2016 Károly Lőrentey.
+//  Copyright © 2015–2017 Károly Lőrentey.
 //
 
 import XCTest
@@ -282,7 +282,7 @@ class ListTests: XCTestCase {
         assertEqualElements(l1, 0..<10)
 
         let l3: List<Int> = [10, 11, 12, 13, 14]
-        func appendAsSequence<E, S: Sequence>(_ list: inout List<E>, _ elements: S) where S.Iterator.Element == E {
+        func appendAsSequence<E, S: Sequence>(_ list: inout List<E>, _ elements: S) where S.Element == E {
             list.append(contentsOf: elements)
         }
         appendAsSequence(&l1, l3)
@@ -311,7 +311,7 @@ class ListTests: XCTestCase {
         assertEqualElements(list, 0..<5)
 
         var copy = list
-        func insertAsSequence<E, S: Sequence>(_ list: inout List<E>, _ elements: S, at index: Int) where S.Iterator.Element == E {
+        func insertAsSequence<E, S: Sequence>(_ list: inout List<E>, _ elements: S, at index: Int) where S.Element == E {
             list.insert(contentsOf: elements, at: index)
         }
         insertAsSequence(&copy, l, at: copy.count)
@@ -439,7 +439,7 @@ class ListTests: XCTestCase {
         list.replaceSubrange(1..<3, with: [50, 51, 52, 53, 54, 55])
         assertEqualElements(list, [0, 50, 51, 52, 53, 54, 55, 20, 30, 8, 9])
 
-        func replaceAsSequence<E, C: Collection>(_ list: inout List<E>, range: CountableRange<Int>, with elements: C) where C.Iterator.Element == E {
+        func replaceAsSequence<E, C: Collection>(_ list: inout List<E>, range: CountableRange<Int>, with elements: C) where C.Element == E {
             list.replaceSubrange(range, with: elements)
         }
         replaceAsSequence(&list, range: 1 ..< 9, with: List(1 ..< 8))
@@ -462,7 +462,7 @@ class ListTests: XCTestCase {
     }
 
     func test_Issue3_CrashInElementwiseAppend() {
-        // https://github.com/lorentey/BTree/issues/3
+        // https://github.com/attaswift/BTree/issues/3
         var list = List<String>()
         for i in 0 ..< 1000 {
             list.append("item \(i)")

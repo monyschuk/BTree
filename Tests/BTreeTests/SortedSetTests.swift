@@ -3,11 +3,11 @@
 //  BTree
 //
 //  Created by Károly Lőrentey on 2016-03-05.
-//  Copyright © 2016 Károly Lőrentey.
+//  Copyright © 2016–2017 Károly Lőrentey.
 //
 
 import XCTest
-@testable import BTree
+import BTree
 
 private final class Test: Comparable, ExpressibleByIntegerLiteral {
     let value: Int
